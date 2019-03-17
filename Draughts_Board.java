@@ -10,10 +10,12 @@ public class Draughts_Board
         JButton b = new JButton(white);
         ImageIcon black = new ImageIcon("empty2.png");
         JButton w = new JButton(black);
+        GridLayout grid = new GridLayout(8,8);
 
     public Draughts_Board()
     {
         board.add(panel);
+        panel.setLayout(grid);
         panel.add(b);
         panel.add(w);
         b.setSize(100,100);
@@ -30,5 +32,4 @@ public class Draughts_Board
     {
         Draughts_Board board = new Draughts_Board();
     }
-
 }
