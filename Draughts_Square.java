@@ -7,11 +7,8 @@ public class Draughts_Square
 
     public Draughts_Board()
     {
-
-
     }
 
-    
     public static void main(String[] args)
     {
 
