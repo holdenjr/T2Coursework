@@ -15,16 +15,21 @@ public class Draughts_Board
     public Draughts_Board()
     {
         board.add(panel);
+        board.setSize(800,800);
+        panel.setSize(800,800);
+
         panel.setLayout(grid);
+
         panel.add(b);
         panel.add(w);
         b.setSize(100,100);
         w.setSize(100,100);
-        board.setSize(800,800);
-        panel.setSize(800,800);
+
+
         board.setTitle("Draughts!");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         board.setVisible(true);
+        
         panel.setVisible(true);
     }
 
