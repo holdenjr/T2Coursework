@@ -12,9 +12,6 @@ public class Draughts_Board
 
         GridLayout grid = new GridLayout(8,8);                                           //Declares the grid layout of 8x8.
 
-        //JButton b = new JButton(white);
-        //JButton w = new JButton(black);
-
         private JButton[][]buttons;                                                      //Creates the button array.
         private final int SIZE = 8;                                                      //Sets the word "SIZE" as 8.
  
@@ -26,10 +23,6 @@ public class Draughts_Board
 
         panel.setLayout(grid);                                                           //Sets the panel to the layout of "grid".
 
-        //panel.add(b);
-        //panel.add(w);
-        //b.setSize(100,100);
-        //w.setSize(100,100);
         buttons = new JButton[SIZE][SIZE];                                               //Sets the size of the "buttons" array.
         addButtons();
 

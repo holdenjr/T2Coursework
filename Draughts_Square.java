@@ -2,10 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Draughts_Square
+public class Draughts_Square extends Draughts_Board
 {
-
-
     ImageIcon white = new ImageIcon("empty1.png");                                   //Sets the variable "white" to the Empty1 image.
     ImageIcon black = new ImageIcon("empty2.png"); 
     ImageIcon redPiece = new ImageIcon("red.png");
@@ -16,17 +14,38 @@ public class Draughts_Square
     JButton blackP = new JButton(black);
     JButton selected = new JButton(selected);
 
+    static final int empty = 0;
+    static final int redPiece = 1;
+    static final int redKing = 2;
+    static final int whitePiece = 3;
+    static final int whiteKing = 4;
+
     public Draughts_Board()
     {
-        xpos = x;
-        ypos = y;
+        private int xpos = x;
+        private int ypos = y;
 
-        if piece white
-        white seticon white
-        else if piece red
-        white seticon redp
+        for (int row = 0; row < SIZE; row++)
+        {
+            for (int col = 0; col < SIZE; col++)
+            {
+                if(row % 2 == col % 2)
+                {
+                    if (row < 3)
+                    board[row][col] = whitePiece;
+                    else if (row > 4)
+                    board[row][col] = redPiece;
+                    else
+                    board[row][col] = empty;
+                }
+                else
+                {
+                    board[row][col] = empty;
+                }
+            }
+        }
 
-
+        }
     }
 
 
