@@ -19,7 +19,7 @@ public class Board extends Square
 
         panel.setLayout(grid);                                                           //Sets the panel to the layout of "grid".
 
-        buttons = new JButton[SIZE][SIZE];                                               //Sets the size of the "buttons" array.
+        Square[][] buttons = new Square[SIZE][SIZE];                                               //Sets the size of the "buttons" array.
         addButtons();
 
         board.setTitle("Draughts!");                                                     //Sets the title of the board as "Draughts!".
@@ -35,8 +35,14 @@ public class Board extends Square
         {
             for (int b = 0; b < SIZE; b++)                                               //When b is less than 8, add one.
             {
+                if((a+b)%2 != 0){                                                        //If a + b remainder 2 is not equal to 0.
+                    buttons[a][b] = new JButton(white);                                       //Add a new white button.
                     panel.add(buttons[a][b]);
-                         
+                }
+                else{
+                    buttons[a][b] = new JButton(black);                                  //Otherwise, add a black button.
+                    panel.add(buttons[a][b]);
+                }               
             }
         }
     }
