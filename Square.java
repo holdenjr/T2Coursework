@@ -1,7 +1,4 @@
-import javax.lang.model.util.ElementScanner6;
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicScrollPaneUI.ViewportChangeHandler;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -17,27 +14,32 @@ public class Square
     ImageIcon redKing = new ImageIcon("red-king.png");
     ImageIcon whitePiece = new ImageIcon("white.png");
     ImageIcon whiteKing = new ImageIcon("white-king.png");
-    JButton whiteSquare = new JButton(white);
-    JButton blackSquare = new JButton(black);
-    boolean isWhite;
+    JButton btnSqaure;// = new JButton();
+    //JButton blackSquare = new JButton();
+    boolean isWhite = false;
 
-    public  Square(int x, int y, boolean isW)
+    public Square(int x, int y, boolean isW)
     {
         xPosition = x;
         yPosition = y;
         isWhite = isW;
+
+        JButton btnSqaure = new JButton();
+
+        if (isWhite == true)
+        {
+            btnSqaure.setIcon(white);
+        }
+        else
+        {
+            btnSqaure.setIcon(black);
+        }
+        
     }
 
     public JButton getButton()
     {
-        if (isWhite == true)
-        {
-            return whiteSquare;
-        }
-        else
-        {
-            return blackSquare;
-        }
+        return btnSqaure;
     }
 
     public static void main(String[] args)

@@ -10,25 +10,25 @@ public class Board
         JPanel panel = new JPanel();
 
         GridLayout grid = new GridLayout(8,8);
-        board.add(panel);
+
         board.setSize(800,800);
         panel.setSize(800,800);
         panel.setLayout(grid);
 
         final int SIZE = 8;
 
-        Square[][] buttons = new Square[SIZE][SIZE];
-
-        board.setTitle("Draughts!");
+        board.setTitle("Draughts");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         board.setVisible(true);
 
-        panel.setVisible(true); 
+
+        Square[][] buttons = new Square[SIZE][SIZE];
 
         for (int a = 0; a < SIZE; a++)
         {
             for (int b = 0; b < SIZE; b++)
             {
+                       System.out.println(a+" "+b+" "+SIZE);
                 if((a+b)%2 != 0)
                 {
                     buttons[a][b] = new Square(a, b, false);
@@ -41,5 +41,10 @@ public class Board
                 }               
             }
         }  
+
+        board.add(panel);
+        panel.setVisible(true); 
+
+ 
     }
 }
