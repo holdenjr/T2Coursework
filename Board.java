@@ -2,22 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Board
+public class Board extends Square
 {
-        private JFrame board = new JFrame("Draughts");                                   //Creates the Frame, and names it Draughts.
-        private JPanel panel = new JPanel();                                             //Creates the panel.
-
-        ImageIcon white = new ImageIcon("empty1.png");                                   //Sets the variable "white" to the Empty1 image.
-        ImageIcon black = new ImageIcon("empty2.png");                                   //Sets the variable "black" to the Empty2 image.
+        JFrame board = new JFrame("Draughts");                                   //Creates the Frame, and names it Draughts.
+        JPanel panel = new JPanel();                                             //Creates the panel.
 
         GridLayout grid = new GridLayout(8,8);                                           //Declares the grid layout of 8x8.
 
-        private JButton[][]buttons;                                                      //Creates the button array.
-        private final int SIZE = 8;                                                      //Sets the word "SIZE" as 8.
+        JButton[][]buttons;                                                      //Creates the button array.
 
-        private int xLocation;
-        private int yLocation;
- 
     public Board()
     {
         board.add(panel);                                                                //Adds the panel to the board.
@@ -42,14 +35,8 @@ public class Board
         {
             for (int b = 0; b < SIZE; b++)                                               //When b is less than 8, add one.
             {
-                if((a+b)%2 != 0){                                                        //If a + b remainder 2 is not equal to 0.
-                    buttons[a][b] = new JButton(white);                                  //Add a new white button.
                     panel.add(buttons[a][b]);
-                }
-                else{
-                    buttons[a][b] = new JButton(black);                                  //Otherwise, add a black button.
-                    panel.add(buttons[a][b]);
-                }               
+                         
             }
         }
     }
