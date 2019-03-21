@@ -14,7 +14,7 @@ public class Square
     ImageIcon redKing = new ImageIcon("red-king.png");
     ImageIcon whitePiece = new ImageIcon("white.png");
     ImageIcon whiteKing = new ImageIcon("white-king.png");
-    JButton btnSqaure;// = new JButton();
+    JButton btnSquare;// = new JButton();
     //JButton blackSquare = new JButton();
     boolean isWhite = false;
 
@@ -24,22 +24,21 @@ public class Square
         yPosition = y;
         isWhite = isW;
 
-        JButton btnSqaure = new JButton();
-
         if (isWhite == true)
         {
-            btnSqaure.setIcon(white);
+            btnSquare.setIcon(white);
         }
         else
         {
-            btnSqaure.setIcon(black);
+            btnSquare.setIcon(black);
         }
         
     }
 
     public JButton getButton()
     {
-        return btnSqaure;
+        JButton btnSquare = new JButton();
+        return btnSquare;
     }
 
     public static void main(String[] args)

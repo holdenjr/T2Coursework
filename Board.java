@@ -28,7 +28,6 @@ public class Board
         {
             for (int b = 0; b < SIZE; b++)
             {
-                       System.out.println(a+" "+b+" "+SIZE);
                 if((a+b)%2 != 0)
                 {
                     buttons[a][b] = new Square(a, b, false);
@@ -41,10 +40,7 @@ public class Board
                 }               
             }
         }  
-
         board.add(panel);
-        panel.setVisible(true); 
-
- 
+        panel.setVisible(true);  
     }
 }
