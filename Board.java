@@ -19,9 +19,8 @@ public class Board
 
         board.setTitle("Draughts");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //board.setVisible(true);
 
-        Square[][] buttons = new Square[SIZE][SIZE];
+        Square[][] buttons = new Square[8][8];
 
         for (int a = 0; a < SIZE; a++)
         {
@@ -29,17 +28,32 @@ public class Board
             {
                 if((a+b)%2 != 0)
                 {
-                    buttons[a][b] = new Square(a, b, false);
+                    buttons[a][b] = new Square(a, b, true);
                     panel.add(buttons[a][b].getButton());
                 }
                 else
                 {
-                    buttons[a][b] = new Square(a, b, true);
+                    buttons[a][b] = new Square(a, b, false);
                     panel.add(buttons[a][b].getButton());
+
                 }               
             }
         }  
+
+        if(isWhite = true)
+        {
+            if ( y < 3 || y > 4)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
         board.setContentPane(panel);
         board.setVisible(true);  
     }
+    
 }

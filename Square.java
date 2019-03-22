@@ -15,17 +15,20 @@ public class Square
     ImageIcon whitePiece = new ImageIcon("white.png");
     ImageIcon whiteKing = new ImageIcon("white-king.png");
     JButton btnSquare = new JButton();
-    boolean isWhite;
-
-    public Square(int x, int y, boolean isW)
+    boolean checkerP;
+    public boolean isWhite;
+    
+    public Square(int x, int y, boolean isW, int checkerPiece)
     {
         xPosition = x;
         yPosition = y;
         isWhite = isW;
+        checkerPiece = piece;
 
         if (isWhite == true)
         {
             btnSquare.setIcon(white);
+            
         }
         else
         {
