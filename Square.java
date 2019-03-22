@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.Point;
 
-public class Square
+public class Square implements ActionListener
 {
     Border borderE = BorderFactory.createEmptyBorder();
 
@@ -22,16 +22,17 @@ public class Square
     JButton btnPiece = new JButton();
     Point whitePosition = new Point();
     public boolean isWhite;
-    public String pieceHere;    
+    public String pieceHere; 
 
     String redPieceHere = "RED";
     String whitePieceHere = "WHITE";
     String blankSpace = "NULL";
 
-    public void setLocation(int x, int y)
-    {
+public void actionPerformed(ActionEvent e)
+{
+    System.out.println(xPosition+" "+yPosition+" ");
+}
 
-    }
     public Square(int x, int y, boolean isW)
     {
         xPosition = x;
@@ -45,10 +46,6 @@ public class Square
         {
             btnSquare.setIcon(white);
             whitePosition.setLocation(x,y);
-            System.out.println(whitePosition.getLocation());
-
-            //for rows 0,1,2, check black/white, put red if white
-            //for rows 5,6,7, check if white, put white piece if white
 
                 if (y <= 2)
                 {
@@ -63,13 +60,17 @@ public class Square
                 else
                 {
                     pieceHere = blankSpace;
-                }
-            
+                } 
         }
         else
         {
             btnSquare.setIcon(black);
         }
+
+        btnSquare.addActionListener(this);
+
+        int[][]pos1 = new int[x][y];
+        System.out.println(pos1);
     }
 
     public JButton getButton()
@@ -79,6 +80,6 @@ public class Square
 
     public static void main(String[] args)
     {
-
+        
     }
 }
