@@ -10,6 +10,9 @@ import java.awt.event.*;
  **/
 public class Board
 {
+    /**
+     * This is the Board class.
+     **/
     public Board()
     {
         /**
