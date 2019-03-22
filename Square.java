@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class Square
 {
-    int xPosition;
+	int xPosition;
     int yPosition;
 
     ImageIcon white = new ImageIcon("empty1.png");
@@ -14,9 +14,8 @@ public class Square
     ImageIcon redKing = new ImageIcon("red-king.png");
     ImageIcon whitePiece = new ImageIcon("white.png");
     ImageIcon whiteKing = new ImageIcon("white-king.png");
-    JButton btnSquare;// = new JButton();
-    //JButton blackSquare = new JButton();
-    boolean isWhite = false;
+    JButton btnSquare = new JButton();
+    boolean isWhite;
 
     public Square(int x, int y, boolean isW)
     {
@@ -32,12 +31,10 @@ public class Square
         {
             btnSquare.setIcon(black);
         }
-        
     }
 
     public JButton getButton()
     {
-        JButton btnSquare = new JButton();
         return btnSquare;
     }
 

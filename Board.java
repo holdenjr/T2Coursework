@@ -19,8 +19,7 @@ public class Board
 
         board.setTitle("Draughts");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        board.setVisible(true);
-
+        //board.setVisible(true);
 
         Square[][] buttons = new Square[SIZE][SIZE];
 
@@ -40,7 +39,7 @@ public class Board
                 }               
             }
         }  
-        board.add(panel);
-        panel.setVisible(true);  
+        board.setContentPane(panel);
+        board.setVisible(true);  
     }
 }
