@@ -20,7 +20,7 @@ public class Board
         board.setTitle("Draughts");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Square[][] buttons = new Square[8][8];
+        Square[][] buttons = new Square[SIZE][SIZE];
 
         for (int a = 0; a < SIZE; a++)
         {
@@ -40,16 +40,13 @@ public class Board
             }
         }  
 
-        if(isWhite = true)
+        if (b < 3 || b > 4)
         {
-            if ( y < 3 || y > 4)
-            {
+            
+        }
+        else
+        {
 
-            }
-            else
-            {
-
-            }
         }
 
         board.setContentPane(panel);

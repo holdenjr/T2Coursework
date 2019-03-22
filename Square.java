@@ -15,19 +15,33 @@ public class Square
     ImageIcon whitePiece = new ImageIcon("white.png");
     ImageIcon whiteKing = new ImageIcon("white-king.png");
     JButton btnSquare = new JButton();
-    boolean checkerP;
+    JButton btnPiece = new JButton();
     public boolean isWhite;
+    public boolean pieceHere;
     
-    public Square(int x, int y, boolean isW, int checkerPiece)
+    public Square(int x, int y, boolean isW)
     {
         xPosition = x;
         yPosition = y;
         isWhite = isW;
-        checkerPiece = piece;
 
         if (isWhite == true)
         {
             btnSquare.setIcon(white);
+            //for rows 0,1,2, check black/white, put red if white
+
+            for (y = 0; y < 3; y++)
+            {
+                
+                if (b < 3 || b > 4)
+                {
+                    pieceHere = true;
+                }
+                else
+                {
+                    pieceHere = false;
+                }
+            }
             
         }
         else
@@ -39,6 +53,11 @@ public class Square
     public JButton getButton()
     {
         return btnSquare;
+    }
+
+    public JButton getPiece()
+    {
+        return btnPiece;
     }
 
     public static void main(String[] args)
