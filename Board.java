@@ -4,7 +4,8 @@ import java.awt.event.*;
 
 public class Board
 {
-    public static void main(String[] args)
+
+    public Board()
     {
         JFrame board = new JFrame("Draughts");
         JPanel panel = new JPanel();
@@ -15,11 +16,10 @@ public class Board
         panel.setSize(800,800);
         panel.setLayout(grid);
 
-        final int SIZE = 8;
-
         board.setTitle("Draughts");
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        final int SIZE = 8;
         Square[][] buttons = new Square[SIZE][SIZE];
 
         for (int a = 0; a < SIZE; a++)
@@ -28,20 +28,23 @@ public class Board
             {
                 if((a+b)%2 != 0)
                 {
-                    buttons[a][b] = new Square(a, b, true);
+                    buttons[a][b] = new Square(b, a, true);
                     panel.add(buttons[a][b].getButton());
-                    panel.add(buttons[a][b].getPiece());
+                    //panel.add(buttons[a][b].getPiece());
                 }
                 else
                 {
-                    buttons[a][b] = new Square(a, b, false);
+                    buttons[a][b] = new Square(b, a, false);
                     panel.add(buttons[a][b].getButton());
-
                 }               
             }
         }  
 
         board.setContentPane(panel);
-        board.setVisible(true);  
+        board.setVisible(true);
+    }
+    public static void main(String[] args)
+    {
+        Board board = new Board();
     }  
 }
