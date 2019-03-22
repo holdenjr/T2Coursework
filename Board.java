@@ -30,7 +30,7 @@ public class Board
                 {
                     buttons[a][b] = new Square(a, b, true);
                     panel.add(buttons[a][b].getButton());
-                    
+                    panel.add(buttons[a][b].getPiece());
 
                 }
                 else

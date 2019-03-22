@@ -44,18 +44,18 @@ public class Square
                 
                 if (y < 3)
                 {
-                    pieceHere = 1;
+                    pieceHere = redPieceHere;
                     btnPiece.setIcon(redPiece);
 
                 }
                 else if(y > 4)
                 {
-                    pieceHere = 2;
+                    pieceHere = whitePieceHere;
                     btnPiece.setIcon(whitePiece);
                 }
                 else
                 {
-                    pieceHere = 0;
+                    pieceHere = blankSpace;
                 }
             }
            
