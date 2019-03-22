@@ -1,3 +1,4 @@
+import javax.lang.model.util.ElementScanner6;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,30 +18,48 @@ public class Square
     JButton btnSquare = new JButton();
     JButton btnPiece = new JButton();
     public boolean isWhite;
-    public boolean pieceHere;
+    public int pieceHere;
     
     public Square(int x, int y, boolean isW)
     {
         xPosition = x;
         yPosition = y;
         isWhite = isW;
+        int redPieceHere = 1;
+        int whitePieceHere = 2;
+        int blankSpace = 0;
 
         if (isWhite == true)
         {
             btnSquare.setIcon(white);
             //for rows 0,1,2, check black/white, put red if white
 
-            for (y = 0; y < 3; y++)
+            for (y = 0; y < 8; y++)
             {
                 
-                if (b < 3 || b > 4)
+                if (y < 3)
                 {
-                    pieceHere = true;
+                    pieceHere = 1;
+
+                }
+                else if(y > 4)
+                {
+                    pieceHere = 2;
                 }
                 else
                 {
-                    pieceHere = false;
+                    pieceHere = 0;
                 }
+            }
+
+            if(pieceHere = 1)
+            {
+                btnPiece.setIcon(redPiece);
+            }
+
+            else if(pieceHere = 2);
+            {
+                btnPiece.setIcon(whitePiece);
             }
             
         }

@@ -40,15 +40,6 @@ public class Board
             }
         }  
 
-        if (b < 3 || b > 4)
-        {
-            
-        }
-        else
-        {
-
-        }
-
         board.setContentPane(panel);
         board.setVisible(true);  
     }
