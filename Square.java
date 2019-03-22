@@ -5,6 +5,8 @@ import java.awt.event.*;
 
 public class Square
 {
+    Border borderE = BorderFactory.createEmptyBorder();
+
 	int xPosition;
     int yPosition;
 
@@ -17,7 +19,6 @@ public class Square
     ImageIcon whiteKing = new ImageIcon("white-king.png");
     JButton btnSquare = new JButton();
     JButton btnPiece = new JButton();
-    Border borderE = BorderFactory.createEmptyBorder();
     public boolean isWhite;
     public int pieceHere;
     
@@ -31,14 +32,14 @@ public class Square
         int blankSpace = 0;
 
         btnSquare.setBorder(borderE);
+        btnPiece.setBorder(borderE);
 
         if (isWhite == true)
         {
             
             btnSquare.setIcon(white);
             //for rows 0,1,2, check black/white, put red if white
-
-
+            //for rows 5,6,7, check if white, put white piece if white
             for (y = 0; y < 8; y++)
             {
                 
@@ -46,7 +47,6 @@ public class Square
                 {
                     pieceHere = redPieceHere;
                     btnPiece.setIcon(redPiece);
-
                 }
                 else if(y > 4)
                 {
